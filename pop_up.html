@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+            *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+            font-weight: 600;
+
+        }
+        .c1{
+            width: 100%;
+            height: 100vh;
+            /* padding: 10px; */
+            background-color: rgba(11, 72, 118, 0.766);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .btn{ 
+            border: none;
+            border-radius: 30px;
+            padding: 10px 60px ;
+            background-color: rgb(49, 185, 185);
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .pop{
+            background-color: rgb(250, 250, 250);
+            width: 50%;
+            padding: 10px;
+            border-radius: 6px;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%,-50%)scale(0.1);
+            text-align: center;
+            padding: 0 30px 30px;
+            visibility: hidden;
+            transition: transform 0.4s, top 0.4s;
+        }
+        .open_popup{
+            visibility: visible;
+            transform: translate(-50%,-50%)scale(1);
+            top: 50%;
+
+        }
+        .pop img{
+            width: 30%;
+            margin-top: -50px;
+            border-radius: 50%;
+
+        }
+        .pop h2{
+            margin: 30px 0 10px;
+
+        }
+        .pop button{
+            width: 100%;
+            margin-top: 50px;
+            padding: 10px 0;
+            border-radius: 4px;
+            cursor: pointer;
+            background-color: rgb(44, 189, 122);
+            border: none;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="c1">
+        <button type="submit" class="btn" onclick="open_pop()">submit</button>
+        <div class="pop" id="Pop">
+            <img src="1930264_check_complete_done_green_success_icon.png",alert="img">
+            <h2>Thank You!</h2>
+            <!-- <br> -->
+            <p>Your details has been successfully submitted Thanks!</p>
+            <button type="button" onclick="close_pop()">OK</button>
+        </div>
+    </div>
+
+    <script>
+        var pop=document.getElementById("Pop");
+        function open_pop(){
+            pop.classList.add("open_popup");
+        }
+        function close_pop(){
+            pop.classList.remove("open_popup");
+        }
+    </script>
+</body>
+</html>
